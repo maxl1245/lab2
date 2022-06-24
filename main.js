@@ -253,7 +253,7 @@ function DrawSurface() {
 			
 		}
 	}
-	const tStep = Math.PI / 180 * 25 ;
+	const tStep = Math.PI / 180 * 40 ;
     const aStep = Math.PI / 180 * 13;
 	const size = Math.PI / 2;
 	
@@ -464,9 +464,9 @@ function init() {
     }
 
 	window.addEventListener("deviceorientation", function orient(event) {
-      alpha = -event.alpha
-	  beta = -event.beta
-	  gamma = -event.gamma
+      alpha = event.alpha
+	  beta = event.beta
+	  gamma = event.gamma
 	  draw();
 	}, true);
 
