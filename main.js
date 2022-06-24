@@ -189,14 +189,14 @@ function StereoCamera(
 
 function getFunc(a, t, k){
 	let r = 1;
-	let c = 1;
-	let d = 0.5;
-	let teta = Math.PI/3;
+	let c = 2;
+	let d = 1;
+	let teta = Math.PI/2;
 	let a0 = 0;
 	
 	let x = (r * Math.cos(a) - (r * (a0 - a) + t * Math.cos(teta) - c * Math.sin(d * t) * Math.sin(teta)) * Math.sin(a)) / k;
     let y = (r * Math.sin(a) + (r * (a0 - a) + t * Math.cos(teta) - c * Math.sin(d * t) * Math.sin(teta)) * Math.cos(a)) / k;
-    let z = (t * Math.sin(teta) + c * Math.sin(d * t) * Math.cos(teta)) / -k;
+    let z = (t * Math.sin(teta) + c * Math.sin(d * t) * Math.cos(teta)) / -15;
 	return [x, y, z];
 }
 
@@ -251,12 +251,12 @@ function DrawSurface() {
 				normals = normals.concat(getNormal(a, t + tStep, k));
 			}	
 
-			drawPrimitive(gl.TRIANGLE_STRIP, [0.5, 0.8, 1, 1], positions, normals);
+			drawPrimitive(gl.TRIANGLE_STRIP, [0.6, 0.2, 1, 1], positions, normals);
 
 			
 		}
 	}
-	const tStep = Math.PI / 180 * 100 ;
+	const tStep = Math.PI / 180 * 25 ;
     const aStep = Math.PI / 180 * 13;
 	const size = Math.PI / 2;
 	
