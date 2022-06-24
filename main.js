@@ -25,10 +25,7 @@ var alpha = 0;
 var beta = 0;
 var gamma = 0;
 
-let data = {frame: false,
-			color: true,
-			texture: false,
-			anaglyph: true};
+
 let worldViewProjectionLocation
 let worldLocation
 
@@ -307,25 +304,22 @@ function draw() {
 	//gl.uniformMatrix4fv(worldViewProjectionLocation, false, matAccum0);
 	gl.uniformMatrix4fv(worldLocation, false, matAccum1);
 	
-	if (data.anaglyph) {
-		gl.colorMask(true, false, false, false);
-		DrawSurface();
-		
-		gl.clear(gl.DEPTH_BUFFER_BIT);
-		
-		projection = AnaglyphCamera.mRightProjectionMatrix;
-		matAccum3 = m4.multiply(AnaglyphCamera.mRightModelViewMatrix, matAccum2);
-		modelViewProjection = m4.multiply(projection, matAccum3);
-		
-		gl.uniformMatrix4fv(iModelViewProjectionMatrix, false, modelViewProjection );
-		
-		gl.colorMask(false, true, true, false);
-		DrawSurface();
-		gl.colorMask(true, true, true, true);
-	}
-	else {
-		DrawSurface();
-	}
+	
+	gl.colorMask(true, false, false, false);
+	DrawSurface();
+	
+	gl.clear(gl.DEPTH_BUFFER_BIT);
+	
+	projection = AnaglyphCamera.mRightProjectionMatrix;
+	matAccum3 = m4.multiply(AnaglyphCamera.mRightModelViewMatrix, matAccum2);
+	modelViewProjection = m4.multiply(projection, matAccum3);
+	
+	gl.uniformMatrix4fv(iModelViewProjectionMatrix, false, modelViewProjection );
+	
+	gl.colorMask(false, true, true, false);
+	DrawSurface();
+	gl.colorMask(true, true, true, true);
+	
 	
 	//gl.drawArrays(gl.TRIANGLES, 0, 16 * 6);
     // Draw coordinate axes as thick colored lines that extend through the cube. */
