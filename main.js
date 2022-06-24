@@ -30,7 +30,7 @@ let worldViewProjectionLocation
 let worldLocation
 
 let scale = 1.0;
-let convergence = 50;
+let convergence = 52;
 let eyeSeparation = 0.06;
 let FOV = Math.PI/8;
 let nearClippingDistance = 8;
