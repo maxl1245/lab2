@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<title>TrackballRotator Demo</title>
+<style>
+    body {
+        background-color: #EEEEEE;
+    }
+	#canvas-holder {
+		display: flex;
+		
+	}
+    
+	#checkboxs {
+		padding-left: 25px;
+		padding-right: 75px;
+	}
+	
+    #box {
+		margin: 5px;
+	}
+</style>
+
+<!--
+    An example using a TrackballRotator, defined in TrackballRotator.js,
+    to implement rotation by mouse.
+-->
+
+<script src="./Utils/trackball-rotator.js"></script>
+<script src="https://webgl2fundamentals.org/webgl/resources/m4.js"></script>
+<script src="https://webglfundamentals.org/webgl/resources/webgl-lessons-ui.js"></script>
+<script src="./shader.gpu"></script>
+<script src="./main.js"></script>
+
+
+</head>
+<body onload="init()">
+
+<h2>Monge Surface with a Cylindrical Directrix Surface and with a Sinusoid as Meridian</h2>
+
+
+<div id="canvas-holder">
+   
+   <div id="checkboxs">
+		<div id="box">
+			<div id="Eye_separation_parameter"></div>
+		</div>
+		<div id="box">
+			<div id="Field_of_View"></div>
+		</div>
+		<div id="box">
+			<div id="Near_Clipping_distance"></div>
+		</div>
+		<div id="box">
+			<div id="Convergence_distance"></div>
+		</div>
+   </div>
+   <canvas width="650" height="650" id="webglcanvas" style="background-color:red"></canvas>
+</div>
+
+
+
+
+
+</body></html>
